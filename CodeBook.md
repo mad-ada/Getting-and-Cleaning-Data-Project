@@ -1,6 +1,7 @@
 #CodeBook
 ## Data Source
 Original data set: Hunman Activity Recognition Using Smartphones Dataset https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
 Data set decription: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ## Data Set Information
