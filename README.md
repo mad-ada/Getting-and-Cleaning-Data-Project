@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting and Cleaning Data - Course Project
 ## Introduction
 Given the raw data collected from the accelerometers from the Samsung Galaxy S smartphone, the project is to prepare tidy data that can be used for later analysis. The repository includes three main files:
@@ -22,3 +23,6 @@ The run_analysis.R script will perform the following step:
 * Timestamps the data set archive file with when it was downloaded
 * Extracts the data set files from the archive
 * READS Traing & test column files into respective variables
+=======
+# Getting-and-Cleaning-Data-Project
+>>>>>>> bf38bf638267df118309b2bb8cdad8ac98e87679
