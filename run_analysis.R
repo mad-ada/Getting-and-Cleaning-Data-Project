@@ -29,7 +29,7 @@ activityTest <- read.table("./UCI HAR Dataset/test/y_test.txt")
 subjectTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 
-# merge train and test data
+# merge training and test data
 dataFeatures <- rbind(featuresTrain, featuresTest)
 dataActivity <- rbind(activityTrain, activityTest)
 dataSubject <- rbind(subjectTrain, subjectTest)
@@ -45,15 +45,15 @@ names(dataFeatures) <- featuresNames
 dataFeatures <- dataFeatures[, extractFeatures]
 
 dataActivity[,2] <- activity_labels[dataActivity[,1]]
-names(dataActivity) <- c("activity_ID", "activity_Label")
-names(dataSubject) <- "subject"
+names(dataActivity) <- c("activity_ID", "Activity")
+names(dataSubject) <- "Subject"
 
 data <- cbind(as.data.table(dataSubject), dataActivity, dataFeatures)
 
 # create a second, independent tidy data set and output it
-id_labels = c("subject", "activity_ID", "activity_Label")
+id_labels = c("Subject", "activity_ID", "Activity")
 data_labels = setdiff(colnames(data), id_labels)
 melt_data = melt(data, id = id_labels, measure.vars = data_labels)
 
-tidy_data   = dcast(melt_data, subject + activity_Label ~ variable, mean)
+tidy_data   = dcast(melt_data, Subject + Activity ~ variable, mean)
 write.table(tidy_data, file = "./tidy_data.txt", row.name = FALSE)
